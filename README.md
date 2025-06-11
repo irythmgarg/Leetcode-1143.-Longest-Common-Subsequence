@@ -1,7 +1,6 @@
-# Leetcode-1143.-Longest-Common-Subsequence
 # 🧬 Longest Common Subsequence (LCS) 💙
 
-Welcome to the **Longest Common Subsequence (LCS)** repository! 🎯 This classic **Dynamic Programming** problem is a favorite in interviews and coding competitions. Let's explore 4 powerful approaches to solve it! 💪
+Welcome to the **Longest Common Subsequence (LCS)** repository! 🎯 This classic **Dynamic Programming** problem is a favorite in interviews and coding competitions. Let's explore 5 powerful approaches to solve it! 💪
 
 ---
 
@@ -84,14 +83,39 @@ Explanation: The LCS is "ace" ✅
 
 ---
 
+## 🧮 Approach 5: Space Optimized DP (Only 2 Rows!) 🧵💼
+
+### 🧠 Idea:
+
+* Realize that each DP row depends only on the **previous row**, so we can keep just two rows and reuse them.
+* Use two 1D arrays (or a 2-row 2D array) to alternate between current and previous rows.
+
+### ⚙️ Explanation:
+
+1. Swap strings if `text2` is longer to keep the row array smaller.
+2. Iterate over `text1` and `text2`, updating only the current row.
+3. Store results in alternating rows and finally return the last computed cell.
+
+### 🌟 Advantages:
+
+* **Saves space** drastically for large inputs!
+
+### 🚀 Complexity:
+
+* Time: **O(n \* m)**
+* Space: **O(2 \* min(n, m))** 💾
+
+---
+
 ## 📊 Comparison Table
 
-| Approach        | Time Complexity | Space Complexity | Returns LCS String | Suitable For               |
-| --------------- | --------------- | ---------------- | ------------------ | -------------------------- |
-| 🌀 Recursion    | O(2^n)          | O(n)             | ❌                  | Small inputs only ⚠️       |
-| 🧠 Top-Down DP  | O(n\*m)         | O(n\*m)          | ❌                  | Medium to large ✅          |
-| 🧊 Bottom-Up DP | O(n\*m)         | O(n\*m)          | ❌                  | Large & optimal 💯         |
-| 🖋️ Printing DP | O(n\*m)         | O(n\*m)          | ✅                  | When you need the string ✨ |
+| Approach              | Time Complexity | Space Complexity  | Returns LCS String | Suitable For                  |
+| --------------------- | --------------- | ----------------- | ------------------ | ----------------------------- |
+| 🌀 Recursion          | O(2^n)          | O(n)              | ❌                  | Small inputs only ⚠️          |
+| 🧠 Top-Down DP        | O(n\*m)         | O(n\*m)           | ❌                  | Medium to large ✅             |
+| 🧊 Bottom-Up DP       | O(n\*m)         | O(n\*m)           | ❌                  | Large & optimal 💯            |
+| 🖋️ Printing DP       | O(n\*m)         | O(n\*m)           | ✅                  | When you need the string ✨    |
+| 💼 Space Optimized DP | O(n\*m)         | O(2 \* min(n, m)) | ❌                  | Large inputs, memory bound 🧠 |
 
 ---
 
