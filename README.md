@@ -1,7 +1,7 @@
 # Leetcode-1143.-Longest-Common-Subsequence
 # 🧬 Longest Common Subsequence (LCS) 💙
 
-Welcome to the **Longest Common Subsequence (LCS)** repository! 🎯 This classic **Dynamic Programming** problem is a favorite in interviews and coding competitions. Let's explore 3 powerful approaches to solve it! 💪
+Welcome to the **Longest Common Subsequence (LCS)** repository! 🎯 This classic **Dynamic Programming** problem is a favorite in interviews and coding competitions. Let's explore 4 powerful approaches to solve it! 💪
 
 ---
 
@@ -60,13 +60,38 @@ Explanation: The LCS is "ace" ✅
 
 ---
 
+## 🖨️ Approach 4: Bottom-Up DP with Actual Subsequence Printing 🖋️
+
+### ✨ Idea:
+
+* Use the same 2D DP table as the bottom-up approach.
+* Maintain an additional 2D table of directions:
+
+  * 'D' (Diagonal): Characters matched
+  * 'U' (Up): Skip character from text1
+  * 'L' (Left): Skip character from text2
+* After filling DP and direction tables, **trace back** from dp\[m]\[n] to build the actual LCS string.
+
+### 📈 Usefulness:
+
+* Returns both the **length** and the **actual LCS string**!
+* Helpful in applications like diff tools, DNA sequencing, etc.
+
+### ⚡ Complexity:
+
+* Time: **O(n \* m)**
+* Space: **O(n \* m)**
+
+---
+
 ## 📊 Comparison Table
 
-| Approach        | Time Complexity | Space Complexity | Suitable For         |
-| --------------- | --------------- | ---------------- | -------------------- |
-| 🌀 Recursion    | O(2^n)          | O(n)             | Small inputs only ⚠️ |
-| 🧠 Top-Down DP  | O(n\*m)         | O(n\*m)          | Medium to large ✅    |
-| 🧊 Bottom-Up DP | O(n\*m)         | O(n\*m)          | Large & optimal 💯   |
+| Approach        | Time Complexity | Space Complexity | Returns LCS String | Suitable For               |
+| --------------- | --------------- | ---------------- | ------------------ | -------------------------- |
+| 🌀 Recursion    | O(2^n)          | O(n)             | ❌                  | Small inputs only ⚠️       |
+| 🧠 Top-Down DP  | O(n\*m)         | O(n\*m)          | ❌                  | Medium to large ✅          |
+| 🧊 Bottom-Up DP | O(n\*m)         | O(n\*m)          | ❌                  | Large & optimal 💯         |
+| 🖋️ Printing DP | O(n\*m)         | O(n\*m)          | ✅                  | When you need the string ✨ |
 
 ---
 
